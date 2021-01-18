@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Datamodel voor beschikbare capaciteit in het elektriciteitsnet ten behoeve van de 
+  Regionale Energie Strategieën</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+   <script class="remove" src="config.js"></script>
+
+</head>
+
+
+
+
+<body>
+  <section id="abstract">
+    <p> Dit Document beschrijft de datadefinities die gebruikt 
+	worden voor data publicatie rondom huidige en toekomstige net capaciteit door 
+	de netbeheerders ten behoeve 
+	van de energie transitie en de regionale energie strategieën. 
+	</p>
+  </section>
+  <section id="sotd">
+    <p>Draft</p>
+  </section>
+
+
+ <section id="introductie"> 
+ <h1>Introductie </h1>
+ 
+	<p>Binnen het samenwerkingsverband VIVET (Verbetering Informatie Voorziening Energie Transitie), 
+	werken 5 overheidspartijen in opdracht van de Ministeries van Economische Zaken en Binnenlandse Zaken 
+	aan informatieproducten ten behoeve van de energietransitie. Een belangrijk onderdeel daarvan is 
+	de informatievoorziening rondom de ondergrondse energie-infrastructuur, waaronder 
+	elektriciteitsnetten. </p>
+	
+	<p>Data wordt steeds belangrijker bij beleidsvorming en de energiesector speelt binnen deze 
+	energietransitie een zeer belangrijke rol. Netbeheerders in Nederland beschikken over 
+	gedetailleerde data, maar mogen en kunnen deze gegevens niet zomaar delen. Aan de andere kant 
+	is er wel een duidelijke informatiebehoefte. Deze informatieproducten moeten er aan bijdragen 
+	dat veel vragen vanuit de gebruikers direct beantwoord kunnen worden, zodat de Netbeheerders 
+	hierin ontlast worden. </p>
+	
+	<p>VIVET heeft aan de Netbeheerders gevraagd om ten behoeve van de energietransities 3 datasets 
+	als open data te delen die in een eenduidig format landelijk ontsloten kunnen worden. Dit document
+	beschrijft de specificaties van informatieproduct 1: Kaartlaag capaciteit en investeringen 
+	hoogspanningsstations. </p>
+ 
+ </section>
+ 
+ <section id="uitgangspunten">
+ <h1> Uitgangspunten </h1> 
+ 
+ <section id="bestandsformaat">
+ <h2>Bestandformaat</h2>
+	<p>Shapefile of filegeodatabase.
+	De drie beschreven informatieproducten bestaan uit vlakken, lijnen en/of punten. 
+	Deze kunnen worden geleverd in één van de meest gebruikte standaard GIS formaten van 
+	ESRI: Shape (.shp) of Filegeodatabase (.gdb). Dit bestandsformaat maakt het mogelijk dat 
+	het Kadaster de verschillende datasets kan samenvoegen en controleren en vervolgens beschikbaar 
+	kan stellen.
+	In sommige bestanden is een geografische ligging op een kaart te tonen. 
+	Hiervoor dient u het referentiesysteem “Amersfoort / RD New” te gebruiken,
+	ook wel bekend onder de naam EPSG: 28992.</p>
+ </section>
+ 
+ <section id= "doelgroep">
+	<h2> Doelgroep </h2>
+	<p> Initiatiefnemers voor grootschalige invoeding of afname van elektriciteit, 
+	zoals RES-regio’s, overheden en ontwikkelaars</p>
+ </section>
+ 
+  <section id= "scope">
+	<h2> Scope </h2>
+	<p>Elektriciteitsnetten van de regionale netbeheerders; stations met een voedende 
+	spanning van 25kV en hoger, conform artikel 2.3 van de ‘Ministeriële Regeling 
+	investeringsplan en kwaliteit elektriciteit en gas’.
+	Investeringen op deze spanningsniveaus zijn omvangrijk en leggen een basis voor de 
+	beschikbare capaciteit voor langere termijn en kunnen -vanwege hun omvang- niet eenvoudig 
+	aangepast worden op de vigerende behoefte zoals in netten met lagere spanningsniveaus.
+</p>
+ </section>
+ 
+     <section id= "verwantepublicaties">
+	<h2>Verwante Publicaties </h2>
+	<p>Er wordt volledig aangesloten bij bestaande publicaties op het gebied van 
+	netcapaciteit en investeringen, te weten: Investeringsplannen en kaarten met gebieden
+	waar sprake is van transportschaarste. </p>
+ </section>
+ 
+   <section id= "disclaimer">
+	<h2>Disclaimer </h2>
+	<p>De kaarten zijn indicatief en bieden geen instrument voor de vaststelling of en op 
+	welk station een geplande aansluiting gerealiseerd kan worden</p>
+
+	<p>De kaarten geven primair inzicht in de mogelijkheid voor nieuwe grootschalige 
+	invoeding/opwek of afname van elektriciteit op het elektriciteitsnet van de regionale netbeheerders.</p>
+	
+	<p>De verzorgingsgebieden zijn een simplificatie van de werkelijke netsituatie en inidicatief</p>
+	
+	<p>Bij de investeringsplanning voor vermogen kunnen transportbeperkingen gelden vanuit het 
+	hoogspanningsnet van de landelijke netbeheerder TenneT. Hierdoor kan mogelijk niet (direct) 
+	de volledige vermogensinvestering benut worden</p>
+ </section>
+
+ 
+   <section id= "dataverwerkingsprocess">
+	<h2>Dataverwerkingsprocess </h2>
+	<p>Elke regionale netbeheerder levert de data van zijn verzorgingsgebied aan bij PDOK. </p>
+	
+	<p>PDOK voegt de afzonderlijke producten samen tot een geheel en publiceert het geheel. </p>
+	
+	<p>Data wordt maandelijks vernieuwd, mits daar inhoudelijke aanleiding voor is door elke 
+	regionale netbeheerder. </p>
+	
+	<p>TenneT levert capaciteitsbeperkingen op de koppelpunten tussen het landelijk hoogspanningsnet 
+	en de netten van de regionale netbeheerders aan bij de regionale netbeheerders. </p>
+	
+	<p>Met als basis de publicatiedatum van de kaart wordt inzicht gegeven in de huidige 
+	capaciteit en een voorspelling van de capaciteit binnen 3, 5 en 10 jaar </p> 
+	
+	### tijdspanne aan de hand van jaren, expliciet aan de kaartlaag gekoppels
+	
+ </section>
+ 
+  <section id= "definities">
+	<h2>Definities in de context van deze usecase </h2>
+	<p>Alle informatie wordt op station niveau gerapporteerd en niet per asset binnen een 
+	station (zoals een transformator), omdat het voor de markt gaat om de totaal beschikbare 
+	capaciteit in een gebied en het geen rol speelt welke onderliggende assets of installaties 
+	daar een rol in spelen </p>
+	
+	<p>Het verzorgingsgebied van een station wordt als een voronoi-diagram weergegeven. Dit geeft 
+	een overzichtelijker en minder versnipperd beeld dan het werkelijke verzorgingsgebied van een 
+	station o.b.v. de gevoede aansluitingen. In de grensgebieden van meerdere verzorgingsgebieden 
+	is ook niet op voorhand vast te stellen door welk station een nieuw initiatief gevoed zal 
+	worden, waarmee deze vereenvoudiging van de werkelijke situatie gerechtvaardigd is </p>
+	
+	<p>Capaciteit: n-1 (Redundant ontworpen net zodat een verstoring of onderhoud aan een component 
+	niet tot uitval van de energievoorziening van aangeslotenen leidt) veilig vermogen (som van 
+	transformatoren binnen het station) voor afname. Voor invoeding/opwek mag vanaf 01-01-2021 het 
+	n-0 veilig vermogen gehanteerd worden. Zie het Ministerieel Besluit hierover [[minbesluit]].</p>
+	
+	<p>Beschikbare capaciteit voor invoeding/opwek of afname: Om synchroniteit met kaarten over 
+	transportschaarste te borgen de berekening op dezelfde manier uitvoeren. In hoofdlijnen voert 
+	elke netbeheerder dezelfde berekening uit.
+ </p>
+	
+	<p>Beschikbare capaciteit van de zwakste schakel van het station (b.v. transformatorcapaciteit, 
+	railcapaciteit, vrije velden, transportbeperkingen bovenliggend TenneT net) – reeds gerealiseerde 
+	capaciteit – capaciteit van projecten in de pijplijn. </p>
+	
+	<p>Tussen netbeheerders onderling zullen hier naar aanleiding van de netsituatie ter plekke 
+	nuanceverschillen in de berekeningen zitten. Elke netbeheerder is verantwoordelijk voor zijn 
+	eigen berekening en borgt dat deze in lijn is en blijft met de berekening voor transportschaarste. </p>
+	
+	<p>De volgende informatie wordt 1 op 1 overgenomen uit de Investeringsplannen van de regionale 
+	netbeheerders: </p>
+	
+	<ol>
+		<li><p>Beschikbare capaciteit voor afname (in MVA, afgerond op tientallen) </p></li>
+		
+		<li><p>Verwacht jaar van overbelasting (jaartal of n.v.t.) </p></li>
+		
+		<li><p>Investeringsplanning vermogen (in MVA, afgerond op tientallen) </p></li>
+		
+		<li><p>Investeringsplanning tijd (jaartal of n.v.t.) </p></li>
+	
+	</ol>
+	
+
+	
+	
+ </section>
+ 
+<!-- 
+  <section id= "">
+	<h2> </h2>
+	<p> </p>
+ </section>
+  -->
+  
+ </section>
+
+  
+   <section id="referentieStandaarden">
+    <h1>Relevante Informatie standaarden</h1>
+	<p>In dit hoofdstuk lichten we een aantal relevante referentie modellen
+	toe en wanneer we ze wel of niet gebruikt hebben</p>
+	
+	   
+	   <section id="cim">
+	<h2>IEC-CIM</h2>
+	<h3>Introductie </h3>
+	<p> Het IEC Common Information Model (CIM) is een IEC-standaard die semantisch het 
+	elektriciteitsdomein . Het IEC-CIM wordt in Europa gebruikt voor gegevensuitwisselingen 
+	tussen netbeheerders conform de Common Grid Model Exchange Specification (CGMES). Ook de
+	gegevensuitwisselingen waar de Europese netcode
+	om vraagt worden voornamelijk conform IEC-CIM uit gedrukt. </p>
+	
+	<h3>Informatiedomein </h3>
+	<p> </p>
+	
+	<h3>Wanneer wel/niet gebruikt </h3>
+	<p> </p>
+	
+	<p> </p>
+	   </section >
+	
+	   <section id="geosparql">
+	<h2>Geosparql/GML</h2>
+	<h3>Introductie </h3>
+	<p>Geosparql [[geosparql]] is de linked data interpretatie van GML (Geography Markup Language) [[gml]]. Het model 
+	wordt gepubliceerd door het Open Geospatial Consortium. </p>
+	
+	<h3>Informatiedomein </h3>
+	<p>Geosparql beschrijft op abstract niveau hoe ‘dingen’ (features) op de kaart getoond kunnen 
+	worden aan de hand van geometrieën.</p>
+	
+	<h3>Wanneer wel/niet gebruikt </h3>
+	<p>Geosparql wordt gebruikt om geometrische weergaven van de netonderdelen te definiëren. </p>
+	   </section >   
+	   
+	     <section id="bs"> 
+	<h2>NTA 8035/Basic Semantics</h2>
+	<h3>Introductie </h3>
+	<p>NTA 8035 beschrijft de semantische modellering in de gebouwde omgeving. Het biedt een hoofdstructuur 
+	waarmee zaken zoals ‘fysiek object’, ‘informatieobject’, ‘gebeurtenis’ en ‘activiteit’ worden gedefinieerd 
+	en aan elkaar worden gerelateerd. Hiervoor wordt de Basic Semantics ontologie gebruikt. </p>
+	
+	<h3>Informatiedomein </h3>
+	<p>Hoewel de NTA 8035 voortkomt uit gegevensuitwisseling in de gebouwde omgeving rondom Building Information
+	Modelling (BIM) beschrijft het een ‘upper ontology’ die inzicht biedt in hoe verschillende 
+	informatie domeinen geïntegreerd kunnen worden </p>
+	
+	<h3>Wanneer wel/niet gebruikt </h3>
+	<p>De Basic Semantics ontologie wordt gebruikt wanneer IEC-CIM en Geosparql niet voldoen. 
+	Daarnaast is deze ontologie, net als IMKL een belangrijk contextuele standaard, in dit geval 
+	voor de bouw-sector. Om deze reden zal er ook eenlogische mapping gedefinieerd worden van 
+	het model voor deze usecase naar Basic Semantics. </p>
+   </section >
+   
+   
+	 <section id="imkl">
+    <h2>IMKL</h2>
+	<h3>Introductie </h3>
+	<p> Het Informatie Model Kabels en Leidingen (IMKL) 
+	is momenteel het referentie model waarmee liggingsgegevens over de energienetten 
+	in Nederland worden gepubliceerd. Het model wordt gepubliceerd door GeoNovum. Het 
+	is een Nederlandse uitbreiding op het Europese Inspire informatie [[inspire-md]] model. </p>
+	
+	<h3>Informatiedomein </h3>
+	<p>Het informatie model richt zich vooral op geo toepassingen, waarmee het zeer
+	geschikt is om liggingsgegevens te tonen op de kaart, maar in minderen mate om 
+	technische gegevens (zoals beschikbare capaciteit) te publiceren. </p>
+	
+	<h3>Wanneer wel/niet gebruikt </h3>
+	<p>Hoewel dit model de relevante netonderdelen beschrijft, biedt het te weinig 
+	opties voor het ontsluiten van de gevraagde technische informatie. En omdat de 
+	geometrische liggingsgegevens in  IMKL/Inspire conform GML/Geosparql worden gepubliceerd, 
+	worden IEC-CIM en GML/Geosparql voor deze usecase geprefereerd over IMKL.</p>
+	
+	<p>Door het belang van IMKL/Inspire binnen de omgevingswet en de interactie 
+	tussen de Omgevingswet en de energie transitie zal een logische mapping gespecificeerd 
+	worden tussen IEC-CIM en IMKL zodat de gegevens uit deze usecase ook in die context gebruikt 
+	kunnen worden.
+	</p>
+	</section >
+
+   
+   
+  </section>
+  
+	<section class="appendix informative" id="glossary">
+    <h2>Glossary</h2>
+    <p><dfn data-lt="Beschikbare netcapaciteit">Beschikbare netcapaciteit</dfn>: De hoeveelheid 
+	energie dat het energienet op een bepaalde plek of in een bepaalde regio nog extra 
+	kan transporteren/distribueren bovenop wat momenteel typisch gebruikt wordt.</p>
+	
+	<p><dfn data-lt="Voedingsgebied">Voedingsgebied</dfn>: Het geografisch gebied dat door een 
+	 specifiek station van energie wordt voorzien, technisch gezien kan er overlap bestaan tussen 
+	 de voedingsgebieden van een station</p>
+	 
+	<p><dfn data-lt="Station">Station</dfn>: Verzameling van schakel-en-verdeel installaties en 
+	transformatoren (voor elektriciteit) of regelstraten (voor gas) en de benodigde secundaire componenten,
+	gebouwen en terreinen, dat als één geheel beschouwd wordt in het beheer van ons netwerk.[[Station]]</p>
+    </section>
+	
+ </section>
+    
+
+  
+</body>
+</html>
